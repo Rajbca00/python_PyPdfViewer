@@ -30,7 +30,7 @@ def load_app():
 
         logging.info("load_app completed")
     except Exception as e:
-        logging.ERROR("Failed to load app. "+e)
+        logging.error("Failed to load app. " +str(e))
 
 def load_view():
     """
@@ -70,7 +70,7 @@ def load_view():
         root.mainloop()
 
     except Exception as e:
-        logging.ERROR("Failed to load elements. "+e)
+        logging.error("Failed to load elements. " +str(e))
     
 
 def add_files():
@@ -81,7 +81,7 @@ def add_files():
         files_list_data.set(get_files())
         check_pdf_files()
     except Exception as e:
-        logging.ERROR("Failed to add files to list element. "+e)
+        logging.error("Failed to add files to list element. " +str(e))
 
 def get_files():
     """
@@ -92,7 +92,7 @@ def get_files():
         files = os.listdir(folder_path)
         return files
     except Exception as e:
-        logging.ERROR("Failed to get files from directory. "+e)
+        logging.error("Failed to get files from directory. " +str(e))
 
 def check_pdf_files():
     """
@@ -108,7 +108,7 @@ def check_pdf_files():
         show_pdf()
     
     except Exception as e:
-        logging.ERROR("Failed to check for pdf files. "+e)
+        logging.error("Failed to check for pdf files. " +str(e))
 
 
 def merge_pdf(pdf_files):
@@ -127,7 +127,7 @@ def merge_pdf(pdf_files):
         merger.close()
         print("File merged")
     except Exception as e:
-        logging.ERROR("Failed to merge pdf files. "+e)
+        logging.error("Failed to merge pdf files. " +str(e))
 
 
 def show_pdf():
@@ -152,6 +152,6 @@ def show_pdf():
         v2.pack()
         pdf_root.mainloop()
     except Exception as e:
-        logging.ERROR("Failed to load pdf file. "+e)
+        logging.error("Failed to load pdf file. " +str(e))
 
 main()
